@@ -75,24 +75,24 @@ nav.main a.prensa.active{background:var(--dorado);color:var(--tinta)}
 .hero:before{content:"";position:absolute;left:62%;top:58%;width:1600px;height:1600px;transform:translate(-50%,-50%);
   background:repeating-conic-gradient(from 0deg, rgba(0,0,0,.075) 0 7.5deg, rgba(255,255,255,0) 7.5deg 15deg);border-radius:50%;
   -webkit-mask:radial-gradient(circle, #000 0 35%, transparent 70%);mask:radial-gradient(circle,#000 0 35%,transparent 70%)}
-.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:end;min-height:640px}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:24px;align-items:end;min-height:640px}
 .hero .txt{padding:96px 0 96px;align-self:center}
 .hero h1{font-size:clamp(42px,6.4vw,84px);margin:18px 0 22px}
 .hero h1 em{font-style:normal;color:var(--dorado)}
 .hero p.sub{font-size:21px;max-width:560px;opacity:.92}
 .hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
-.hero .foto{align-self:end;position:relative}
-.hero .foto img{width:100%;max-width:520px;margin-left:auto;
-  -webkit-mask:linear-gradient(to right,transparent 0,#000 14%),linear-gradient(to top,transparent 0,#000 0);
-  -webkit-mask-composite:source-in;mask:linear-gradient(to right,transparent 0,#000 14%);}
-.hero .tag{position:absolute;left:0;bottom:56px;background:var(--crema);color:var(--guinda);border-radius:18px;padding:14px 18px;box-shadow:0 18px 40px rgba(0,0,0,.25);max-width:250px}
+.hero .txt{position:relative;z-index:2}
+.hero .foto{--h:min(700px,58vw);min-width:0;align-self:end;position:relative;display:flex;justify-content:flex-end}
+.hero .foto img{display:block;flex:none;height:var(--h);width:auto;max-width:none;margin-top:32px}
+.hero .tag{position:absolute;right:calc(var(--h)*.837 - 230px);bottom:48px;z-index:3;background:var(--crema);color:var(--guinda);border-radius:18px;padding:14px 18px;box-shadow:0 18px 40px rgba(0,0,0,.25);width:250px;max-width:calc(100vw - 48px)}
 .hero .tag b{display:block;font-family:var(--wide);font-variation-settings:"wdth" 118;font-weight:850;font-size:30px;line-height:1}
 .hero .tag span{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--dorado-2);text-transform:uppercase;letter-spacing:.05em}
 @media (max-width:900px){
   .hero .wrap{grid-template-columns:1fr;min-height:0}
   .hero .txt{padding:56px 0 8px}
-  .hero .foto img{max-width:420px;margin:0 auto}
-  .hero .tag{left:8px;bottom:24px}
+  .hero .foto{justify-content:center}
+  .hero .foto img{height:auto;width:100%;max-width:480px;margin:0 auto}
+  .hero .tag{left:8px;right:auto;bottom:24px}
 }
 
 /* aviso banda */
